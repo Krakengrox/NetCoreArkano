@@ -1,0 +1,35 @@
+﻿@using ApiRest.Modelos
+
+@{
+
+    ViewData["Title"] = "Create Computer";
+}
+
+@model Computer
+
+<h2>@ViewData["Title"]</h2>
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form method="post">
+
+                <div class="form-group">
+                    <label asp-for="memory">Memory</label>
+                    <input asp-for="memory" />
+                    <span asp-validation-for="memory" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="processor">Processor</label>
+                    <input asp-for="processor" />
+                    <span asp-validation-for="processor" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="diskType">Disk Type</label>
+                    <input asp-for="diskType" />
+                    <span asp-validation-for="diskType" class="text-danger"></span>
+                </div>
+                <button type="submit" value="Create" class="btn btn-default">Create Computer</button>
+            </form>
+        </section>
+    </div>
+</div>

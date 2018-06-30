@@ -1,0 +1,5 @@
+C:\Users\Kraken\Documents\NetCoreArkano\ApiRest\ApiRest
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=ApiRest
+--content-root=C:\Users\Kraken\Documents\NetCoreArkano\ApiRest\ApiRest
+--file=

@@ -1,0 +1,90 @@
+﻿@using ApiRest.Modelos
+
+@{
+    ViewData["Title"] = "Computers";
+    var pcId = 60;
+}
+
+@model List<Computer>
+
+<h1>Computers information</h1>
+
+
+@*<button asp-controller="Home" asp-action="Computers" type="submit" asp-route-id="@pcId">Mega Boton</button>*@
+
+<div>
+    <form method="post">
+        <table id="computers_info" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Computer Id</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Processor</th>
+                    <th>Disk Type</th>
+                    <th>Status Option</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr>
+                    <th>Computer Id</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Memory</th>
+                    <th>Processor</th>
+                    <th>Disk Type</th>
+                    <th>Status Option</th>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>
+
+<link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+@section scripts{
+
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+      //  console.log(data);
+
+        $(document).ready(function () {
+
+            CreateComputersTables();
+
+        });
+
+        function CreateComputersTables()
+        {
+
+            @foreach (var computer in Model)
+            {
+                @:$('#computers_info').append('<tr><th>@computer.id</th><th>@computer.memory</th><th>@computer.memory</th><th>@computer.memory</th><th>@computer.memory</th><th>@computer.memory</th><th>@computer.memory</th><th>@computer.memory</th><th>@computer.memory</th><th>@computer.memory</th><th>@computer.processor</th><th>@computer.diskType</th><th>@computer.state</th><th><button asp-controller="Home" asp-action="Computers" type="submit" asp-route-cp="@computer">Change Status</button></th</tr>');
+            }
+
+            $('#computers_info').DataTable({
+
+            });
+
+        }
+
+    </script>
+
+}
+
+
